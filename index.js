@@ -1,38 +1,39 @@
 const container = document.getElementById("container");
-let cells = document.getElementsByClassName("cell");
-let rows = document.getElementsByClassName("gridRow");
+const userInput = document.getElementById("quantity");
 
-
-let rowsAmount = 16
-let columnsAmount = 16
-defaultGrid(rowsAmount, columnsAmount)
 
 //creates a default grid size, values can be changed later by user with slider e.g.
-function defaultGrid (rowsAmount, columnsAmount) {
-    makeRows(rowsAmount);
-    makeColumns(columnsAmount);
-}
+createGrid();
 
-//takes (rows, columns) input and makes a grid
-    //creates rows
-
-function makeRows (rowsAmount) {
-    for ( r = 0; r<rowsAmount; r++) {
-        let row = document.createElement("div");
-        container.appendChild(row).className = "gridRow";
+function createGrid () {
+    for (let i = 0; i < 256; i++) {
+        const div = document.createElement("div");
+        div.classList.add('square');
+        container.appendChild(div);
     }
-}
-
-    //creates columns
-function makeColumns (columnsAmount) {
-    for (let i = 0; i < rows.length; i++){
-        for (let j = 0; j < columnsAmount; j++){
-            let newCell = document.createElement("div");
-            rows[j].appendChild(newCell).className = "cell";
-        };
-    };
 };
 
+function updateGrid () {
+    //clear innerhtml from default grid container so we don't continuously stack new squares on old ones.
+    container.innerHTML = "";
+    //user input changes columns & rows 
+    container.style.setProperty(
+        "grid-template-columns",
+        `repeat(${userInput.value}, 2fr)`
+    );
+    container.style.setProperty(
+        "grid-template-rows",
+        `repeat(${userInput.value}, 2fr)`
+    );
+
+
+    //build and append as many squares as needed to fill columns & rows
+
+
+const square = document.querySelector("div");
+square.addEventListener("mouseover", function(event){
+    event.target.classList.replace("square", "color")
+});
 
 
 //flexbox the resulting divs in CSS (classes)

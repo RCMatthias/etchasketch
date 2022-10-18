@@ -1,17 +1,31 @@
-.gridRow{
+.right{
+   float: right;
+}
+
+.left{
+    display: inline-block;
+}
+
+#container{
+    background-color: rgb(255, 255, 255);
+    margin-top: 1em;
+    margin-right: 1em;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+    border: 5px solid black;
+    border-radius: 5px;
+    height: 575px;
+    width: 575px;
+}
+
+.square {
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
-    display: flex;
-    height: auto;
 }
 
-.cell {
+.colored {
+    background-color: gray;
     border: 1px solid black;
-    display:flex;
-    height: auto
 }
 
-#container {
-    height:400px;
-    width: 400px;
-
-}
