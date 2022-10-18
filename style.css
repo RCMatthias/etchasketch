@@ -1,0 +1,17 @@
+.gridRow{
+    border: 1px solid black;
+    display: flex;
+    height: auto;
+}
+
+.cell {
+    border: 1px solid black;
+    display:flex;
+    height: auto
+}
+
+#container {
+    height:400px;
+    width: 400px;
+
+}
