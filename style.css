@@ -3,9 +3,13 @@ html{
     font-family: 'Courier New', Courier, monospace;
 }
 
-
+.etchasketch {
+    background-color: #A0171C;
+}
 .right{
    float: right;
+   padding: 20px;
+    background-color: #A0171C;
 }
 
 .left{
@@ -28,10 +32,16 @@ html{
 .square {
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
+    cursor: url('./pencil.png'), default;
 }
 
 .colored {
     background-color: rgb(153, 10, 10);
     border: 1px solid black;
+    cursor: url('./pencil.png'), default;
+
 }
 
+.rainbow {
+    border: 1px solid black;
+}
