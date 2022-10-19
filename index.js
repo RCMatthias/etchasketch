@@ -2,7 +2,8 @@ const container = document.querySelector(".container");
 const userInput = document.getElementById("quantity") ;
 const resetButton = document.querySelector(".reset");
 const rainbowBtn = document.querySelector(".rainbow");
-
+const colourSelected = document.querySelector(".colorPick")
+console.log(colourSelected.value)
 
 //creates a default grid size, values can be changed later by user with slider e.g.
 function createGrid () {
@@ -39,21 +40,28 @@ function updateGrid () {
 
 
 
-//change color on hover
+//change color to red on hover
 const square = document.querySelector("div.container");
 square.addEventListener("mouseover", function(e){
-/*     e.target.classList.replace("square", "colored");
- */    const randomColor = setRandomColor();
-    e.target.style.backgroundColor = randomColor
-    /* 
-    e.target.classList.add("rainbow");
-    const randomColor = setRandomColor;
-    e.target.setAttribute('style', "background-color: randomColor");
-    e.target.classList.replace("square", "rainbow"); */
-
+    e.target.classList.replace("square", "colored");
 });
 
+colourSelected.addEventListener("click", function(e){
+    const square = document.querySelector("div.container");
+    square.addEventListener("mouseover", function(e){
+          e.target.style.backgroundColor = colourSelected.value;
+      });
+});
 
+//Rainbow draw (random color per square) functionality
+rainbowBtn.addEventListener("click", function(e){
+    const square = document.querySelector("div.container");
+    square.addEventListener("mouseover", function(e){
+        const randomColor = setRandomColor();
+          e.target.style.backgroundColor = randomColor;
+      });
+});
+ 
 
 //reset button to basic 16x16 grid
 resetButton.addEventListener("click", function(){
@@ -65,11 +73,6 @@ resetButton.addEventListener("click", function(){
 }) ;
 
 
-//color select button (change color of "color" class)
-
-/* a loop in which each time we get a random Number
-the random number selects a color (array with colors to numbers?)
- */
 
 //button to choose for randomcolor
 const setRandomColor  = () => {
@@ -77,14 +80,8 @@ const setRandomColor  = () => {
     return '#' + randomColor ;
 }
 
-console.log(setRandomColor())
-/* rainbowBtn.addEventListener("click", setRandomColor);
- */
-/* classList.replace("colored", )
-classList.add("rainbow")
-rainbow.setAttribute("")
-classList.replace("colored, rainbow")
 
- */
+
+
 
 createGrid();

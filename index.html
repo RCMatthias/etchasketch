@@ -11,21 +11,29 @@
   <body>
 
 
-    <div class = etchasketch> 
+    <div class = "etchasketch"> 
       <div class="right">
-        <div class="container">   
+        <button class="reset">RESET</button><br>
 
+        <div class="container">   </div>
+
+        <div class="rightbuttons">
+          <input class="colorPick" type="color">Pick a Color</button>
+  
+          <button class="rainbow">
+            <p class= rainbowText> RAINBOW COLOR <br> MAGIC </p> 
+          </button>
         </div>
       </div>
      </div> 
 
     <div class="left">
-      <H1> Etch your sketch on this Etch-A-Sketch ! </H1> 
+      <H1> Etch an art on this Etch-A-Sketch ! </H1> 
     </div>
     <div class="buttons">
+      <div class="explanation"><p>Choose your resolution:</p></div>
       <input type="number" id="quantity" name="quantity" max="100" value="16" min="0"/>
-      <button class="reset">RESET</button>
-      <button class="rainbow">RAINBOW COLOR MAGIC</button>
+      <br>
     </div>
     <script src="index.js"  ></script>
 
